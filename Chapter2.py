@@ -2,8 +2,8 @@ import numpy as np
 
 def AND(x1, x2):
     x = np.array([x1, x2])
-    w = np.array([0.5, 0.5]) #1,1
-    b = -0.7 #-1
+    w = np.array([1, 1]) #1,1 #0.5,0.5
+    b = -1 #-1 #-0.7
     perceptron = np.sum(w*x) + b
     if perceptron > 0:
         return 1
@@ -14,10 +14,10 @@ print("AND(1,1):", AND(1,1), "AND(1,0):", AND(1,0), "AND(0,1):", AND(0,1), "AND(
 
 def NAND(x1, x2):
     x = np.array([x1, x2])
-    w = np.array([-0.5, -0.5]) #-1,-1
-    b = 0.7 #1
+    w = np.array([-1, -1]) #-1,-1 #-0.5,-0.5
+    b = 1 #1 #0.7
     perceptron = np.sum(w*x) + b
-    if perceptron > 0:
+    if perceptron >= 0:
         return 1
     else:
         return 0
@@ -26,8 +26,8 @@ print("NAND(1,1):", NAND(1,1), "NAND(1,0):", NAND(1,0), "NAND(0,1):", NAND(0,1),
 
 def OR(x1, x2):
     x = np.array([x1, x2])
-    w = np.array([0.5, 0.5]) #1,1
-    b = -0.2 #0
+    w = np.array([1, ]) #1,1 #0.5,0.5
+    b = 0 #0 #-0.2
     perceptron = np.sum(w*x) + b
     if perceptron > 0:
         return 1
